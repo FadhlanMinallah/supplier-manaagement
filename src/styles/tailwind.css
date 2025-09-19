@@ -1,0 +1,153 @@
+/* Tailwind CSS v4 - CSS-first configuration */
+@import "tailwindcss";
+
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+
+.body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Tailwind layers */
+@layer components {
+  .stat-card {
+    @apply bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .stat-card:hover .stat-icon {
+    @apply scale-110;
+  }
+  
+  .gradient-button {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center px-6 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 cursor-pointer;
+  }
+  
+  .sidebar-item.active {
+    @apply text-blue-600 bg-blue-50 border-r-2 border-blue-600;
+  }
+  
+  .table-cell-hover {
+    @apply hover:bg-blue-50/30 transition-colors duration-150;
+  }
+  
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold border;
+  }
+  
+  .status-active {
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200;
+  }
+  
+  .status-progress {
+    @apply bg-blue-50 text-blue-700 border-blue-200;
+  }
+  
+  .status-blocked {
+    @apply bg-red-50 text-red-700 border-red-200;
+  }
+  
+  .custom-input {
+    @apply border-gray-300 hover:border-blue-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200;
+  }
+  
+  .custom-select {
+    @apply border-gray-300 hover:border-blue-500 focus:border-blue-500 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .animate-fade-in {
+    @apply animate-[fadeIn_0.5s_ease-in-out];
+  }
+  
+  .animate-slide-up {
+    @apply animate-[slideUp_0.3s_ease-out];
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Ant Design */
+.selected-row {
+  background-color: #e6f7ff !important;
+}
+
+.selected-row:hover {
+  background-color: #e6f7ff !important;
+}
+
+.ant-statistic-content {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+
+.ant-statistic-title {
+  font-size: 14px !important;
+  color: #666 !important;
+  margin-bottom: 8px !important;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.ant-tabs-tab {
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #1890ff;
+  background-color: #1890ff;
+}
+
+.ant-radio-inner:after {
+  background-color: #fff;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner:after {
+  border-color: #fff;
+}
